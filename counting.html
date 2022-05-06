@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>Document</title>
+
+<style>
+.textBox{
+    width: 500px;
+    height: 250px;
+};
+</style>
+<script>
+$(document).ready(function(){
+    
+    $(".buttonClass").click(function(){
+        let str = $(".textBox").val().toLowerCase();
+            /////ALL VOWELS
+            var letter_Count = 0;
+            var a_Count = 0;
+            var e_Count = 0;
+            var i_Count = 0;
+            var o_Count = 0;
+            var u_Count = 0;
+            for (var position = 0; position < str.length; position++) 
+            {
+                if (str.charAt(position) == 'a' || str.charAt(position) == 'e' || str.charAt(position) == 'i' || str.charAt(position) == 'o' || str.charAt(position) == 'u') 
+                {
+                letter_Count += 1;
+                }
+                if (str.charAt(position) == 'a')
+                {
+                a_Count += 1;
+                }
+                if (str.charAt(position) == 'e')
+                {
+                e_Count += 1;
+                }
+                if (str.charAt(position) == 'i')
+                {
+                i_Count += 1;
+                }
+                if (str.charAt(position) == 'o')
+                {
+                o_Count += 1;
+                }
+                if (str.charAt(position) == 'u')
+                {
+                u_Count += 1;
+                }
+            }
+            document.getElementById("vowels").innerHTML = letter_Count;
+            document.getElementById("a").innerHTML = a_Count;
+            document.getElementById("e").innerHTML = e_Count;
+            document.getElementById("i").innerHTML = i_Count;
+            document.getElementById("o").innerHTML = o_Count;
+            document.getElementById("u").innerHTML = u_Count;
+
+    })
+
+    // $(".individualButton").click(function(){
+    //     const vowels = ["a", "e", "i", "o", "u"]
+
+    //     let counter = 0
+
+    //     for (let letter of $(".textBox").val().toLowerCase()){
+    //         if (vowels.includes(letter)){
+    //             counter++
+    //         }
+    //     }
+    //     console.log(`${counter}`);
+    // })
+
+
+});
+    
+    </script>
+
+
+</head>
+<body>
+
+    <div class="input-group">
+        <span class="input-group-text"></span>
+        <textarea class="form-control textBox" aria-label="With textarea"></textarea><br>
+        <button class="buttonClass">Total Vowels</button>
+        <button class="individualButton">Individual Vowels</button>
+        <div> There are <span id="vowels">__</span> vowels</div>
+        <div> There are <span id="a">__</span> a's </div>
+        <div> There are <span id="e">__</span> e's </div>
+        <div> There are <span id="i">__</span> i's </div>
+        <div> There are <span id="o">__</span> o's </div>
+        <div> There are <span id="u">__</span> u's </div>
+      </div>
+    
+</body>
+</html>
